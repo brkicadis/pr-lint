@@ -5,8 +5,13 @@ inputs:
     description: 'Branch name'
     required: true
     default: ''
+  regex:
+    description: 'Regular expression'
+    required: true
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.branch }}
+    - ${{ inputs.regex }}
